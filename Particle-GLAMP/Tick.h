@@ -54,13 +54,13 @@ void DoTick() {
 				repulsion += rep;
 			}
 
-			A.velocity += repulsion + gravity;
+			A.velocity += repulsion/* + gravity*/;
 			A.position += A.velocity;
 
 			A.BounceParticleBounds();
 			
 			_Particles[idx] = A;
-			_frame[A.position.roundToIndex()].SetColor(A.colour);
+			_frame[A.position.roundToIndex()].SetColor(A.velocity.x * 255,A.velocity.y * 255, 255);
 		}
 	);
 

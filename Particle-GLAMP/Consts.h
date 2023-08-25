@@ -10,9 +10,7 @@ const unsigned int w = 512, h = 512;
 
 const unsigned int w_half = w / 2, h_half = h / 2;
 
-const unsigned int maxView = 100;
-
-const int totalParticles = 1000;
+const int totalParticles = 500;
 
 const float camMoveStep = 0.5f;
 const float camSensitvity = 0.001f;
