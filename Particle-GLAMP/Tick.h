@@ -23,13 +23,9 @@ void DoTick() {
 	time_t newTickTime = clock();
 
 	float dt = (newTickTime - tickTime) / 100000.0f;
+	Vec2 gravity(0,-9.81*dt);
 
-	//NX, NY
-
-	//X, Y
 	array_view<Particle, 1> _Particles(totalParticles, particles);
-
-	//View
 	array_view<Color, 2> _frame(w, h, Frame);
 
 	Color bgColor(0, 0, 0);
@@ -45,6 +41,7 @@ void DoTick() {
 			auto A = _Particles[idx];
 
 			Vec2 repulsion;
+			int collisions = 0;
 
 			for (int i = 0; i < _Particles.extent[0]; i++) {
 				if (i == idx[0])
@@ -57,7 +54,7 @@ void DoTick() {
 				repulsion += rep;
 			}
 
-			A.velocity += repulsion;
+			A.velocity += repulsion + gravity;
 			A.position += A.velocity;
 
 			A.BounceParticleBounds();

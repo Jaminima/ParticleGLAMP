@@ -84,8 +84,8 @@ public:
 
 	index<2> roundToIndex() restrict(amp, cpu) {
 		return index<2>(
-			(int)roundf(x),
-			(int)roundf(y)
+			(int)roundf(y),
+			(int)roundf(x)
 		);
 	}
 
