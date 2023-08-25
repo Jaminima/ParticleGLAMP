@@ -22,7 +22,7 @@ time_t tickTime = 0;
 void DoTick() {
 	time_t newTickTime = clock();
 
-	float dt = (newTickTime - tickTime) / 100000.0f;
+	float dt = (newTickTime - tickTime) / 1000.0f;
 	Vec2 gravity(0,-9.81*dt);
 
 	array_view<Particle, 1> _Particles(totalParticles, particles);

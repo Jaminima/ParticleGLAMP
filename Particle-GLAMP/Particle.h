@@ -26,7 +26,7 @@ public:
 	}
 
 	void BounceParticleBounds() restrict(amp) {
-		const float bounceStrength = 1;
+		const float bounceStrength = 0.2;
 
 		if (position.x > w) {
 			position.x = w - (velocity.x - (position.x - w));
@@ -34,7 +34,7 @@ public:
 		}
 
 		if (position.x < 0) {
-			position.x = velocity.x + position.x;
+			position.x = velocity.x - position.x;
 			velocity.x *= -bounceStrength;
 		}
 
@@ -44,7 +44,7 @@ public:
 		}
 
 		if (position.y < 0) {
-			position.y = velocity.y + position.y;
+			position.y = velocity.y - position.y;
 			velocity.y *= -bounceStrength;
 		}
 	}
