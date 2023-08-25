@@ -12,4 +12,40 @@ public:
 
 	Particle() restrict(amp, cpu) {
 	}
+
+	Vec2 CalculateRepulsion(Particle B) restrict(amp) {
+		Vec2 AB = B.position - position;
+
+		float length = AB.length();
+
+		AB.normalise();
+
+		float rep = length < 10 ? 1 / length : 0;
+
+		return AB * rep;
+	}
+
+	void BounceParticleBounds() restrict(amp) {
+		const float bounceStrength = 1;
+
+		if (position.x > w) {
+			position.x = w - (velocity.x - (position.x - w));
+			velocity.x *= -bounceStrength;
+		}
+
+		if (position.x < 0) {
+			position.x = velocity.x + position.x;
+			velocity.x *= -bounceStrength;
+		}
+
+		if (position.y > h) {
+			position.y = h - (velocity.y - (position.y - h));
+			velocity.y *= -bounceStrength;
+		}
+
+		if (position.y < 0) {
+			position.y = velocity.y + position.y;
+			velocity.y *= -bounceStrength;
+		}
+	}
 };

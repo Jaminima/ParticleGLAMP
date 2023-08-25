@@ -9,7 +9,6 @@
 
 unsigned int framesInSec = 0;
 time_t fpsTime = clock() + 1000;
-time_t tickTime = clock() + 1000;
 
 Camera* _camera = new Camera();
 

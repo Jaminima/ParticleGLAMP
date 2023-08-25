@@ -17,19 +17,13 @@ inline bool isInRange(int i, int lim) restrict(amp) {
 	return i < lim && i >= 0;
 }
 
-Vec2 CalculateRepulsion(Particle A, Particle B) restrict(amp) {
-	Vec2 AB = B.position - A.position;
-
-	float length = AB.length();
-
-	AB.normalise();
-
-	float rep = 1 / length;
-
-	return AB * rep;
-}
+time_t tickTime = 0;
 
 void DoTick() {
+	time_t newTickTime = clock();
+
+	float dt = (newTickTime - tickTime) / 100000.0f;
+
 	//NX, NY
 
 	//X, Y
@@ -58,13 +52,15 @@ void DoTick() {
 
 				auto B = _Particles[i];
 
-				auto rep = CalculateRepulsion(A, B) * -1;
+				auto rep = A.CalculateRepulsion(B) * -dt;
 
 				repulsion += rep;
 			}
 
 			A.velocity += repulsion;
 			A.position += A.velocity;
+
+			A.BounceParticleBounds();
 			
 			_Particles[idx] = A;
 			_frame[A.position.roundToIndex()].SetColor(A.colour);
