@@ -47,6 +47,9 @@
     <ClInclude Include="Consts.h">
       <Filter>Misc</Filter>
     </ClInclude>
+    <ClInclude Include="vec2.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Library Include="..\packages\freeglut.2.8.1.15\build\native\lib\v110\x64\Release\dynamic\freeglut.lib">

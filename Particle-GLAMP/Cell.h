@@ -1,12 +1,10 @@
 #pragma once
+#include "vec2.h"
 
 class Cell {
 public:
-	float x = 0;
-	float y = 0;
-	float rho = 1;
-
-	bool isSolid = false;
+	Vec2 velocity = Vec2(0,0);
+	float weight = 1;
 
 	Cell() restrict(amp, cpu) {
 	}

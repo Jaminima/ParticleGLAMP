@@ -11,7 +11,4 @@ float defaultValue = 0;
 
 void InitWorld() {
 	world = new Cell[world_cells];
-
-	world[0].x = 1;
-	world[0].y = 1;
 }
