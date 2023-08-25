@@ -1,14 +1,22 @@
 #pragma once
 
-#include "Cell.h"
+#include "Particle.h"
 #include "Consts.h"
 
-Cell* world;
+Particle* particles;
 
-unsigned int world_x = w, world_y = h;
-unsigned int world_cells = world_x * world_y;
 float defaultValue = 0;
 
+Vec2 rndVec2() {
+	return Vec2(rand() % w, rand() % h);
+}
+
 void InitWorld() {
-	world = new Cell[world_cells];
+	srand(time(NULL));
+
+	particles = new Particle[totalParticles];
+
+	for (int i = 0; i < totalParticles; i++) {
+		particles[i].position = rndVec2();
+	}
 }

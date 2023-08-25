@@ -82,6 +82,13 @@ public:
 		return V.x * x + V.y * y;
 	}
 
+	index<2> roundToIndex() restrict(amp, cpu) {
+		return index<2>(
+			(int)roundf(x),
+			(int)roundf(y)
+		);
+	}
+
 	//Vec2 cross(Vec2 V)restrict(amp, cpu)
 	//{
 	//	/*Vec2 N(
@@ -96,6 +103,10 @@ public:
 		float n = sqrt(x * x + y * y);
 		x /= n;
 		y /= n;
+	}
+
+	float length()restrict(amp, cpu) {
+		return sqrt(x * x + y * y);
 	}
 
 	float norm2() restrict(amp, cpu) { return dot(*this); }

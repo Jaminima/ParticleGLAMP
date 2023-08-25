@@ -143,7 +143,7 @@
     <ClInclude Include="..\packages\freeglut.2.8.1.15\build\native\include\GL\glut.h" />
     <ClInclude Include="App.h" />
     <ClInclude Include="Camera.h" />
-    <ClInclude Include="Cell.h" />
+    <ClInclude Include="Particle.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="Consts.h" />
     <ClInclude Include="Frame.h" />

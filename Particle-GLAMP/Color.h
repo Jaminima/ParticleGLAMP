@@ -60,6 +60,10 @@ public:
 		RGBA = ((B & 0xFF) << 16) + ((G & 0xFF) << 8) + ((R & 0xFF) << 0) + 0xFF000000;
 	}
 
+	void SetColor(Color c) restrict(amp, cpu) {
+		RGBA = c.RGBA;
+	}
+
 	bool IsBlack() restrict(amp, cpu) {
 		return GetR() == 0 && GetG() == 0 && GetB() == 0;
 	}
