@@ -58,7 +58,7 @@ void DoTick() {
 
 				auto B = _Particles[i];
 
-				auto rep = CalculateRepulsion(A, B);
+				auto rep = CalculateRepulsion(A, B) * -1;
 
 				repulsion += rep;
 			}
