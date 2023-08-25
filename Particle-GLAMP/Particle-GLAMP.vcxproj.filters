@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Puddle-GLAMP.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="App.h" />
+    <ClInclude Include="..\packages\freeglut.2.8.1.15\build\native\include\GL\freeglut.h">
+      <Filter>GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\packages\freeglut.2.8.1.15\build\native\include\GL\freeglut_ext.h">
+      <Filter>GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\packages\freeglut.2.8.1.15\build\native\include\GL\freeglut_std.h">
+      <Filter>GL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\packages\freeglut.2.8.1.15\build\native\include\GL\glut.h">
+      <Filter>GL</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Frame.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Inputs.h">
+      <Filter>Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Cell.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Tick.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Simulation</Filter>
+    </ClInclude>
+    <ClInclude Include="Consts.h">
+      <Filter>Misc</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\packages\freeglut.2.8.1.15\build\native\lib\v110\x64\Release\dynamic\freeglut.lib">
+      <Filter>GL</Filter>
+    </Library>
+    <Library Include="..\packages\freeglut.2.8.1.15\build\native\lib\v110\x64\Release\ltcg\freeglut.lib">
+      <Filter>GL</Filter>
+    </Library>
+    <Library Include="..\packages\freeglut.2.8.1.15\build\native\lib\v110\x64\Release\static\freeglut.lib">
+      <Filter>GL</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Window">
+      <UniqueIdentifier>{60be7fa5-55fc-479e-bb9c-662516959c62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GL">
+      <UniqueIdentifier>{5911893e-ef45-4f67-8080-7a0e029f71e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Simulation">
+      <UniqueIdentifier>{6c7e8eb2-0e1e-4080-be8b-93a5d50a995f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Misc">
+      <UniqueIdentifier>{10f0d863-46e7-4743-b746-081bbbe9e268}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="..\packages\freeglut.redist.2.8.1.15\build\native\bin\v110\x64\Release\dynamic\freeglut.dll">
+      <Filter>GL</Filter>
+    </CopyFileToFolders>
+  </ItemGroup>
+</Project>
